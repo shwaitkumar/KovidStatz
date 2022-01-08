@@ -29,6 +29,10 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var tblCountries: UITableView!
     
     var countriesData : JSON = []
+    var responseData : JSON = []
+    var responseData0Index : JSON = []
+    var casesData : JSON = []
+    var deathData :JSON = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +54,7 @@ class HomeScreenViewController: UIViewController {
         self.tblCountries?.delegate = self
         self.tblCountries?.dataSource = self
         
+        getCovidDataForToday(country: "All") //country = All for World
         getCountriesList()
         
     }
@@ -67,14 +72,43 @@ class HomeScreenViewController: UIViewController {
         if NetworkManeger.isConnectedToNetwork(){
             
             NetworkManeger.getRequest(remainingUrl: ApiEndPoint.countries.description, isLoaderShow: true,sendHeader: true) { (response,data)  in
-    
-//                debugPrint("response - ",response)
-//                debugPrint("data - ",data)
                 
                 self.countriesData = response["response"]
-                print("Count is \(self.countriesData.count)")
                 self.tblCountries.reloadData()
 
+            }
+        }else{
+            self.showAlert(Message:  "Network Error")
+        }
+    }
+    
+    //MARK: getCovidDataForToday HIT
+    func getCovidDataForToday(country : String) {
+        
+        if NetworkManeger.isConnectedToNetwork(){
+            
+            NetworkManeger.get2Request(country: country, isLoaderShow: true, sendHeader: true) { (response,data)  in
+                
+                debugPrint("response - ",response)
+                debugPrint("data - ",data)
+                
+                self.responseData = response["response"] //All data
+                self.responseData0Index = self.responseData[0] //data at 0 index
+                
+                //Cases Data
+                self.casesData = self.responseData0Index["cases"] //cases data json at 0th index
+                
+                self.lblActiveCases.text = self.casesData["active"].stringValue
+                self.lblCriticalCases.text = self.casesData["critical"].stringValue
+                self.lblNewCases.text = self.casesData["new"].stringValue
+                self.lblRecoveredCases.text = self.casesData["recovered"].stringValue
+                self.lblTotalCases.text = self.casesData["total"].stringValue
+                
+                //Death Data
+                self.deathData = self.responseData0Index["deaths"] //death data json at 0th index
+                self.lblNewDeaths.text = self.deathData["new"].stringValue
+                self.lblTotalDeaths.text = self.deathData["total"].stringValue
+                
             }
         }else{
             self.showAlert(Message:  "Network Error")
@@ -88,6 +122,12 @@ class HomeScreenViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         SVProgressHUD.dismiss()
     }
+    
+//    func setValues() {
+//
+//        self.lblActiveCases.text = casesData["cases"][2].stringValue
+//
+//    }
 
 }
 
