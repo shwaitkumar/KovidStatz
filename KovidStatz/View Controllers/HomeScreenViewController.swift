@@ -122,12 +122,6 @@ class HomeScreenViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         SVProgressHUD.dismiss()
     }
-    
-//    func setValues() {
-//
-//        self.lblActiveCases.text = casesData["cases"][2].stringValue
-//
-//    }
 
 }
 
