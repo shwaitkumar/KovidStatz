@@ -35,6 +35,9 @@ class HomeScreenViewController: UIViewController {
     var deathData : JSON = []
     var country = ""
     
+    let formatter : DateFormatter = DateFormatter()
+    var currentDate = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -52,6 +55,9 @@ class HomeScreenViewController: UIViewController {
         
         self.tblCountries?.delegate = self
         self.tblCountries?.dataSource = self
+
+        formatter.dateFormat = "yyyy-MM-dd"
+        currentDate = formatter.string(from: NSDate.init(timeIntervalSinceNow: 0) as Date)
         
         getCovidDataForToday(country: "All") //country = All for World
         getCountriesList()
@@ -90,67 +96,78 @@ class HomeScreenViewController: UIViewController {
         
         if NetworkManeger.isConnectedToNetwork(){
             
-            NetworkManeger.get2Request(country: country, isLoaderShow: true, sendHeader: true) { (response,data)  in
+            NetworkManeger.get2Request(country: country, day: currentDate, isLoaderShow: true, sendHeader: true) { (response,data)  in
                 
-                debugPrint("response - ",response)
-                debugPrint("data - ",data)
-                
-                self.responseData = response["response"] //All data
-                self.responseData0Index = self.responseData[0] //data at 0 index
-                
-                //Cases Data
-                self.casesData = self.responseData0Index["cases"] //cases data json at 0th index
-                
-                if self.casesData["active"].stringValue != "" {
-                    self.lblActiveCases.text = self.casesData["active"].stringValue
+                if response["response"] != [] {
+                    
+                    debugPrint("response - ",response)
+                    debugPrint("data - ",data)
+                    
+                    self.responseData = response["response"] //All data
+                    self.responseData0Index = self.responseData[0] //data at 0 index
+                    
+                    //Cases Data
+                    self.casesData = self.responseData0Index["cases"] //cases data json at 0th index
+                    
+                    if self.casesData["active"].stringValue != "" {
+                        self.lblActiveCases.text = self.casesData["active"].stringValue
+                    }
+                    else {
+                        self.lblActiveCases.text = "0"
+                    }
+                    
+                    if self.casesData["critical"].stringValue != "" {
+                        self.lblCriticalCases.text = self.casesData["critical"].stringValue
+                    }
+                    else {
+                        self.lblCriticalCases.text = "0"
+                    }
+                    
+                    if self.casesData["new"].stringValue != "" {
+                        self.lblNewCases.text = self.casesData["new"].stringValue
+                    }
+                    else {
+                        self.lblNewCases.text = "0"
+                    }
+                    
+                    if self.casesData["recovered"].stringValue != "" {
+                        self.lblRecoveredCases.text = self.casesData["recovered"].stringValue
+                    }
+                    else {
+                        self.lblRecoveredCases.text = "0"
+                    }
+                 
+                    if self.casesData["total"].stringValue != "" {
+                        self.lblTotalCases.text = self.casesData["total"].stringValue
+                    }
+                    else {
+                        self.lblTotalCases.text = "0"
+                    }
+                    
+                    //Death Data
+                    self.deathData = self.responseData0Index["deaths"] //death data json at 0th index
+                    
+                    if self.deathData["new"].stringValue != "" {
+                        self.lblNewDeaths.text = self.deathData["new"].stringValue
+                    }
+                    else {
+                        self.lblNewDeaths.text = "0"
+                    }
+                    
+                    if self.deathData["total"].stringValue != "" {
+                        self.lblTotalDeaths.text = self.deathData["total"].stringValue
+                    }
+                    else {
+                        self.lblTotalDeaths.text = "0"
+                    }
+                    
                 }
                 else {
-                    self.lblActiveCases.text = "0"
-                }
-                
-                if self.casesData["critical"].stringValue != "" {
-                    self.lblCriticalCases.text = self.casesData["critical"].stringValue
-                }
-                else {
-                    self.lblCriticalCases.text = "0"
-                }
-                
-                if self.casesData["new"].stringValue != "" {
-                    self.lblNewCases.text = self.casesData["new"].stringValue
-                }
-                else {
-                    self.lblNewCases.text = "0"
-                }
-                
-                if self.casesData["recovered"].stringValue != "" {
-                    self.lblRecoveredCases.text = self.casesData["recovered"].stringValue
-                }
-                else {
-                    self.lblRecoveredCases.text = "0"
-                }
-             
-                if self.casesData["total"].stringValue != "" {
-                    self.lblTotalCases.text = self.casesData["total"].stringValue
-                }
-                else {
-                    self.lblTotalCases.text = "0"
-                }
-                
-                //Death Data
-                self.deathData = self.responseData0Index["deaths"] //death data json at 0th index
-                
-                if self.deathData["new"].stringValue != "" {
-                    self.lblNewDeaths.text = self.deathData["new"].stringValue
-                }
-                else {
-                    self.lblNewDeaths.text = "0"
-                }
-                
-                if self.deathData["total"].stringValue != "" {
-                    self.lblTotalDeaths.text = self.deathData["total"].stringValue
-                }
-                else {
-                    self.lblTotalDeaths.text = "0"
+                    
+                    self.formatter.dateFormat = "yyyy-MM-dd"
+                    self.currentDate = self.formatter.string(from: NSDate.distantPast.dayBefore as Date)
+                    self.getCovidDataForToday(country: "All")
+                    
                 }
                 
             }
@@ -197,6 +214,7 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "CountrywiseCovidDetailsViewController") as! CountrywiseCovidDetailsViewController
         vc.country = country
+        vc.currentDate = currentDate
         navigationController?.pushViewController(vc, animated: true)
         
     }
@@ -218,4 +236,24 @@ class CountriesTableViewCell: UITableViewCell {
         
     }
     
+}
+
+extension Date {
+    static var yesterday: Date { return Date().dayBefore }
+    static var tomorrow:  Date { return Date().dayAfter }
+    var dayBefore: Date {
+        return Calendar.current.date(byAdding: .day, value: -1, to: NSDate.init(timeIntervalSinceNow: 0) as Date)!
+    }
+    var dayAfter: Date {
+        return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
+    }
+    var noon: Date {
+        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+    }
+    var month: Int {
+        return Calendar.current.component(.month,  from: self)
+    }
+    var isLastDayOfMonth: Bool {
+        return dayAfter.month != month
+    }
 }

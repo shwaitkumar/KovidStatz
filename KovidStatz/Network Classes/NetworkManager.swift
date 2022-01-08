@@ -131,9 +131,9 @@ class NetworkManeger: NSObject {
       }
     
     //////////////////////////
-    class func get2Request (country:String, isLoaderShow:Bool? = true , sendHeader:Bool? = false , completion: @escaping ((_ data: JSON, _ responseData:Foundation.Data) -> Void)) {
+    class func get2Request (country:String, day:String, isLoaderShow:Bool? = true , sendHeader:Bool? = false , completion: @escaping ((_ data: JSON, _ responseData:Foundation.Data) -> Void)) {
           
-          let completeUrl = "https://covid-193.p.rapidapi.com/history?country=\(country)&day=2022-01-08"
+          let completeUrl = "https://covid-193.p.rapidapi.com/history?country=\(country)&day=\(day)"
           print ("complete url : ", completeUrl)
           
         if isLoaderShow == true{

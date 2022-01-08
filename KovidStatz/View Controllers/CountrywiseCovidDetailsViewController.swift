@@ -21,6 +21,7 @@ class CountrywiseCovidDetailsViewController: UIViewController {
     var testsData : JSON = []
     var population = ""
     var continent = ""
+    var currentDate = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,7 @@ class CountrywiseCovidDetailsViewController: UIViewController {
         
         if NetworkManeger.isConnectedToNetwork(){
             
-            NetworkManeger.get2Request(country: country, isLoaderShow: true, sendHeader: true) { (response,data)  in
+            NetworkManeger.get2Request(country: country, day: currentDate, isLoaderShow: true, sendHeader: true) { (response,data)  in
                 
                 debugPrint("response - ",response)
                 debugPrint("data - ",data)
