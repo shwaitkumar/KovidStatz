@@ -101,16 +101,57 @@ class HomeScreenViewController: UIViewController {
                 //Cases Data
                 self.casesData = self.responseData0Index["cases"] //cases data json at 0th index
                 
-                self.lblActiveCases.text = self.casesData["active"].stringValue
-                self.lblCriticalCases.text = self.casesData["critical"].stringValue
-                self.lblNewCases.text = self.casesData["new"].stringValue
-                self.lblRecoveredCases.text = self.casesData["recovered"].stringValue
-                self.lblTotalCases.text = self.casesData["total"].stringValue
+                if self.casesData["active"].stringValue != "" {
+                    self.lblActiveCases.text = self.casesData["active"].stringValue
+                }
+                else {
+                    self.lblActiveCases.text = "0"
+                }
+                
+                if self.casesData["critical"].stringValue != "" {
+                    self.lblCriticalCases.text = self.casesData["critical"].stringValue
+                }
+                else {
+                    self.lblCriticalCases.text = "0"
+                }
+                
+                if self.casesData["new"].stringValue != "" {
+                    self.lblNewCases.text = self.casesData["new"].stringValue
+                }
+                else {
+                    self.lblNewCases.text = "0"
+                }
+                
+                if self.casesData["recovered"].stringValue != "" {
+                    self.lblRecoveredCases.text = self.casesData["recovered"].stringValue
+                }
+                else {
+                    self.lblRecoveredCases.text = "0"
+                }
+             
+                if self.casesData["total"].stringValue != "" {
+                    self.lblTotalCases.text = self.casesData["total"].stringValue
+                }
+                else {
+                    self.lblTotalCases.text = "0"
+                }
                 
                 //Death Data
                 self.deathData = self.responseData0Index["deaths"] //death data json at 0th index
-                self.lblNewDeaths.text = self.deathData["new"].stringValue
-                self.lblTotalDeaths.text = self.deathData["total"].stringValue
+                
+                if self.deathData["new"].stringValue != "" {
+                    self.lblNewDeaths.text = self.deathData["new"].stringValue
+                }
+                else {
+                    self.lblNewDeaths.text = "0"
+                }
+                
+                if self.deathData["total"].stringValue != "" {
+                    self.lblTotalDeaths.text = self.deathData["total"].stringValue
+                }
+                else {
+                    self.lblTotalDeaths.text = "0"
+                }
                 
             }
         }else{
