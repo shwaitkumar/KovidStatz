@@ -15,6 +15,7 @@
 		668D0C842789A9600086506C /* Changa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 668D0C832789A9600086506C /* Changa.ttf */; };
 		668D0C872789DBFB0086506C /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668D0C862789DBFB0086506C /* BaseUrl.swift */; };
 		668D0C892789DC470086506C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668D0C882789DC470086506C /* NetworkManager.swift */; };
+		668D0C8B278A03990086506C /* CountrywiseCovidDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668D0C8A278A03990086506C /* CountrywiseCovidDetailsViewController.swift */; };
 		BF9F8FF1F3A89D6EC832E798 /* Pods_KovidStatz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9023E06CBC6E2E1278BE6F /* Pods_KovidStatz.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		668D0C832789A9600086506C /* Changa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Changa.ttf; sourceTree = "<group>"; };
 		668D0C862789DBFB0086506C /* BaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
 		668D0C882789DC470086506C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		668D0C8A278A03990086506C /* CountrywiseCovidDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrywiseCovidDetailsViewController.swift; sourceTree = "<group>"; };
 		8F72AAE0523117E687469E4C /* Pods-KovidStatz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KovidStatz.release.xcconfig"; path = "Target Support Files/Pods-KovidStatz/Pods-KovidStatz.release.xcconfig"; sourceTree = "<group>"; };
 		C0ECBCC670EFBBF92FD78D5E /* Pods-KovidStatz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KovidStatz.debug.xcconfig"; path = "Target Support Files/Pods-KovidStatz/Pods-KovidStatz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +54,6 @@
 				C0ECBCC670EFBBF92FD78D5E /* Pods-KovidStatz.debug.xcconfig */,
 				8F72AAE0523117E687469E4C /* Pods-KovidStatz.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -93,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				668D0C722789A51D0086506C /* HomeScreenViewController.swift */,
+				668D0C8A278A03990086506C /* CountrywiseCovidDetailsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -230,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				668D0C8B278A03990086506C /* CountrywiseCovidDetailsViewController.swift in Sources */,
 				668D0C892789DC470086506C /* NetworkManager.swift in Sources */,
 				668D0C732789A51D0086506C /* HomeScreenViewController.swift in Sources */,
 				668D0C872789DBFB0086506C /* BaseUrl.swift in Sources */,

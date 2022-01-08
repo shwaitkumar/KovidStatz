@@ -32,15 +32,14 @@ class HomeScreenViewController: UIViewController {
     var responseData : JSON = []
     var responseData0Index : JSON = []
     var casesData : JSON = []
-    var deathData :JSON = []
+    var deathData : JSON = []
+    var country = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
 //        scrollView.contentInsetAdjustmentBehavior = .never
-        
-        navigationController?.navigationBar.isHidden = true
         
         setViewShadow(view: viewTitle)
         setViewShadow(view: viewCases)
@@ -57,6 +56,10 @@ class HomeScreenViewController: UIViewController {
         getCovidDataForToday(country: "All") //country = All for World
         getCountriesList()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
     }
     
     func setViewShadow(view : UIView) {
@@ -140,6 +143,20 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
         cell.lblCountryName.text = data.stringValue
         
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let data = countriesData[indexPath.row]
+        
+        country = data.stringValue
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "CountrywiseCovidDetailsViewController") as! CountrywiseCovidDetailsViewController
+        vc.country = country
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     
