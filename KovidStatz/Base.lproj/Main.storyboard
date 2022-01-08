@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Changa.ttf">
+            <string>Changa-Bold</string>
+            <string>Changa-ExtraBold</string>
+            <string>Changa-Medium</string>
+            <string>Changa-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Home Screen View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="HomeScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeScreenViewController" customModule="KovidStatz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="md6-wa-YQM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="r6b-Su-HU8">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lL1-iz-EA5">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
+                                                <color key="backgroundColor" name="Yellow"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGd-Zw-Ar1">
+                                                <rect key="frame" x="0.0" y="448" width="414" height="448"/>
+                                                <color key="backgroundColor" name="Dark Blue"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="r6b-Su-HU8" firstAttribute="top" secondItem="md6-wa-YQM" secondAttribute="top" id="1II-69-m6t"/>
+                                    <constraint firstAttribute="bottom" secondItem="r6b-Su-HU8" secondAttribute="bottom" id="8fK-sh-mPt"/>
+                                    <constraint firstAttribute="trailing" secondItem="r6b-Su-HU8" secondAttribute="trailing" id="BTh-QF-Kvc"/>
+                                    <constraint firstItem="r6b-Su-HU8" firstAttribute="leading" secondItem="md6-wa-YQM" secondAttribute="leading" id="utn-e4-3hO"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ltd-HI-31p">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EO3-5r-aO8" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1308"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJb-vQ-m8q">
+                                                <rect key="frame" x="0.0" y="381" width="414" height="168"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deaths" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQS-SM-XER">
+                                                        <rect key="frame" x="18" y="19" width="378" height="52"/>
+                                                        <fontDescription key="fontDescription" name="Changa-Bold" family="Changa" pointSize="28"/>
+                                                        <color key="textColor" name="Dark Blue"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="TfK-qM-5ob">
+                                                        <rect key="frame" x="18" y="79" width="378" height="71"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3ae-so-BAe">
+                                                                <rect key="frame" x="0.0" y="0.0" width="378" height="33.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyB-xZ-t5a">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="189" height="33.5"/>
+                                                                        <fontDescription key="fontDescription" name="Changa-Medium" family="Changa" pointSize="18"/>
+                                                                        <color key="textColor" name="Dark Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40060948" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neY-5O-FnW">
+                                                                        <rect key="frame" x="189" y="0.0" width="189" height="33.5"/>
+                                                                        <fontDescription key="fontDescription" name="Changa-Regular" family="Changa" pointSize="18"/>
+                                                                        <color key="textColor" name="Dark Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XIt-NK-G1m">
+                                                                <rect key="frame" x="0.0" y="37.5" width="378" height="33.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WW6-2H-nW9">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="189" height="33.5"/>
+                                                                        <fontDescription key="fontDescription" name="Changa-Bold" family="Changa" pointSize="18"/>
+                                                                        <color key="textColor" name="Dark Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40060948" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOs-vw-lyz">
+                                                                        <rect key="frame" x="189" y="0.0" width="189" height="33.5"/>
+                                                                        <fontDescription key="fontDescription" name="Changa-Medium" family="Changa" pointSize="18"/>
+                                                                        <color key="textColor" name="Dark Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="Pewter"/>
+                                                <constraints>
+                                                    <constraint firstItem="TfK-qM-5ob" firstAttribute="top" secondItem="EQS-SM-XER" secondAttribute="bottom" constant="8" id="4jU-oU-rym"/>
+                                                    <constraint firstAttribute="trailing" secondItem="TfK-qM-5ob" secondAttribute="trailing" constant="18" id="B1L-nC-1Cg"/>
+                                                    <constraint firstItem="EQS-SM-XER" firstAttribute="leading" secondItem="WJb-vQ-m8q" secondAttribute="leading" constant="18" id="hq8-Mx-hUG"/>
+                                                    <constraint firstItem="TfK-qM-5ob" firstAttribute="leading" secondItem="WJb-vQ-m8q" secondAttribute="leading" constant="18" id="irM-pE-pON"/>
+                                                    <constraint firstAttribute="trailing" secondItem="EQS-SM-XER" secondAttribute="trailing" constant="18" id="jPk-fm-xd2"/>
+                                                    <constraint firstItem="EQS-SM-XER" firstAttribute="top" secondItem="WJb-vQ-m8q" secondAttribute="top" constant="19" id="owc-b9-UHc"/>
+                                                    <constraint firstAttribute="bottom" secondItem="TfK-qM-5ob" secondAttribute="bottom" constant="18" id="sj2-bf-eUA"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJ6-QH-J3a">
+                                                <rect key="frame" x="0.0" y="101.5" width="414" height="280.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cases" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sa8-wL-wdD">
+                                                        <rect key="frame" x="18" y="19" width="378" height="52"/>
+                                                        <fontDescription key="fontDescription" name="Changa-Bold" family="Changa" pointSize="28"/>
+                                                        <color key="textColor" name="Dark Blue"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="K1C-kH-Cfe">
+                                                        <rect key="frame" x="18" y="79" width="378" height="183.5"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jLk-eK-ZMq">
+                                                                <rect key="frame" x="0.0" y="0.0" width="378" height="33.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UM1-bi-Q7P">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="189" height="33.5"/>
+                                                                        <fontDescription key="fontDescription" name="Changa-Medium" family="Changa" pointSize="18"/>
+                                                                        <color key="textColor" name="Dark Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40060948" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgX-hu-dJf">
+                                                                        <rect key="frame" x="189" y="0.0" width="189" height="33.5"/>
+                                                                        <fontDescription key="fontDescription" name="Changa-Regular" family="Changa" pointSize="18"/>
+                                                                        <color key="textColor" name="Dark Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2hg-Yh-CVJ">
+                                                                <rect key="frame" x="0.0" y="37.5" width="378" height="33.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Critical" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrD-bN-73B">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="189" height="33.5"/>
+                                                                        <fontDescription key="fontDescription" name="Changa-Medium" family="Changa" pointSize="18"/>
+                                                                        <color key="textColor" name="Dark Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40060948" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KA-kK-oXS">
+                                                                        <rect key="frame" x="189" y="0.0" width="189" height="33.5"/>
+                                                                        <fontDescription key="fontDescription" name="Changa-Regular" family="Changa" pointSize="18"/>
+                                                                        <color key="textColor" name="Dark Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rN8-4C-2OK">
+                                                                <rect key="frame" x="0.0" y="75" width="378" height="33.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNb-xu-2mN">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="189" height="33.5"/>
+                                                                        <fontDescription key="fontDescription" name="Changa-Medium" family="Changa" pointSize="18"/>
+                                                                        <color key="textColor" name="Dark Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40060948" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzi-xs-acY">
+                                                                        <rect key="frame" x="189" y="0.0" width="189" height="33.5"/>
+                                                                        <fontDescription key="fontDescription" name="Changa-Regular" family="Changa" pointSize="18"/>
+                                                                        <color key="textColor" name="Dark Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xax-kG-HQy">
+                                                                <rect key="frame" x="0.0" y="112.5" width="378" height="33.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recovered" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zb0-S1-BWU">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="189" height="33.5"/>
+                                                                        <fontDescription key="fontDescription" name="Changa-Medium" family="Changa" pointSize="18"/>
+                                                                        <color key="textColor" name="Dark Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40060948" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdG-QS-8UO">
+                                                                        <rect key="frame" x="189" y="0.0" width="189" height="33.5"/>
+                                                                        <fontDescription key="fontDescription" name="Changa-Regular" family="Changa" pointSize="18"/>
+                                                                        <color key="textColor" name="Dark Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gBQ-7P-7ij">
+                                                                <rect key="frame" x="0.0" y="150" width="378" height="33.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3n-7O-Sau">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="189" height="33.5"/>
+                                                                        <fontDescription key="fontDescription" name="Changa-Bold" family="Changa" pointSize="18"/>
+                                                                        <color key="textColor" name="Dark Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40060948" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLy-dp-D4f">
+                                                                        <rect key="frame" x="189" y="0.0" width="189" height="33.5"/>
+                                                                        <fontDescription key="fontDescription" name="Changa-Medium" family="Changa" pointSize="18"/>
+                                                                        <color key="textColor" name="Dark Blue"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="Blue Gray"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="K1C-kH-Cfe" secondAttribute="bottom" constant="18" id="Bf6-qp-C46"/>
+                                                    <constraint firstItem="K1C-kH-Cfe" firstAttribute="top" secondItem="sa8-wL-wdD" secondAttribute="bottom" constant="8" id="EKw-yu-yCq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sa8-wL-wdD" secondAttribute="trailing" constant="18" id="FsN-0D-rWr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="K1C-kH-Cfe" secondAttribute="trailing" constant="18" id="Zea-78-G9D"/>
+                                                    <constraint firstItem="K1C-kH-Cfe" firstAttribute="leading" secondItem="TJ6-QH-J3a" secondAttribute="leading" constant="18" id="iee-lU-kEd"/>
+                                                    <constraint firstItem="sa8-wL-wdD" firstAttribute="top" secondItem="TJ6-QH-J3a" secondAttribute="top" constant="19" id="pTj-n0-6n2"/>
+                                                    <constraint firstItem="sa8-wL-wdD" firstAttribute="leading" secondItem="TJ6-QH-J3a" secondAttribute="leading" constant="18" id="qlw-hj-KdO"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qoo-CO-ifK">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="102.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Worldwide" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5L-6e-7ts">
+                                                        <rect key="frame" x="116" y="18" width="182.5" height="66.5"/>
+                                                        <fontDescription key="fontDescription" name="Changa-ExtraBold" family="Changa" pointSize="36"/>
+                                                        <color key="textColor" name="Dark Blue"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="Yellow"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="k5L-6e-7ts" secondAttribute="bottom" constant="18" id="BYI-Go-XhF"/>
+                                                    <constraint firstItem="k5L-6e-7ts" firstAttribute="top" secondItem="qoo-CO-ifK" secondAttribute="top" constant="18" id="Dek-td-k1T"/>
+                                                    <constraint firstItem="k5L-6e-7ts" firstAttribute="centerX" secondItem="qoo-CO-ifK" secondAttribute="centerX" id="fch-jS-1XM"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countries" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZD-hM-0fN">
+                                                <rect key="frame" x="18" y="567" width="378" height="39"/>
+                                                <fontDescription key="fontDescription" name="Changa-Bold" family="Changa" pointSize="21"/>
+                                                <color key="textColor" name="Pewter"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gM9-II-VFk">
+                                                <rect key="frame" x="18" y="624" width="378" height="666"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vfe-jS-IiU">
+                                                <rect key="frame" x="18" y="624" width="378" height="666"/>
+                                                <color key="backgroundColor" name="Pewter"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="666" id="WCk-h0-BgM"/>
+                                                </constraints>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountriesTableViewCell" id="vHg-cN-ypb" customClass="CountriesTableViewCell" customModule="KovidStatz" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="44.5" width="378" height="43.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vHg-cN-ypb" id="Ztw-AD-eLy">
+                                                            <rect key="frame" x="0.0" y="0.0" width="378" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ih0-MN-rRe">
+                                                                    <rect key="frame" x="18" y="9" width="342" height="26"/>
+                                                                    <fontDescription key="fontDescription" name="Changa-Medium" family="Changa" pointSize="14"/>
+                                                                    <color key="textColor" name="Dark Blue"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="ih0-MN-rRe" secondAttribute="trailing" constant="18" id="SAd-0m-j9U"/>
+                                                                <constraint firstItem="ih0-MN-rRe" firstAttribute="leading" secondItem="Ztw-AD-eLy" secondAttribute="leading" constant="18" id="THu-tG-EN6"/>
+                                                                <constraint firstItem="ih0-MN-rRe" firstAttribute="centerY" secondItem="Ztw-AD-eLy" secondAttribute="centerY" id="zHR-dw-4wi"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <color key="backgroundColor" name="Pewter"/>
+                                                        <connections>
+                                                            <outlet property="lblCountryName" destination="ih0-MN-rRe" id="mKr-qu-rdI"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Dark Blue"/>
+                                        <constraints>
+                                            <constraint firstItem="WJb-vQ-m8q" firstAttribute="top" secondItem="TJ6-QH-J3a" secondAttribute="bottom" constant="-1" id="14c-tj-wEg"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vfe-jS-IiU" secondAttribute="trailing" constant="18" id="1LJ-pF-DhL"/>
+                                            <constraint firstItem="Vfe-jS-IiU" firstAttribute="top" secondItem="TZD-hM-0fN" secondAttribute="bottom" constant="18" id="2pw-af-zGV"/>
+                                            <constraint firstItem="qoo-CO-ifK" firstAttribute="top" secondItem="EO3-5r-aO8" secondAttribute="top" id="4PZ-6f-hZw"/>
+                                            <constraint firstAttribute="trailing" secondItem="WJb-vQ-m8q" secondAttribute="trailing" id="7oq-xG-G7C"/>
+                                            <constraint firstItem="gM9-II-VFk" firstAttribute="trailing" secondItem="Vfe-jS-IiU" secondAttribute="trailing" id="FT5-rE-Y5K"/>
+                                            <constraint firstItem="gM9-II-VFk" firstAttribute="leading" secondItem="Vfe-jS-IiU" secondAttribute="leading" id="VKp-WH-mPz"/>
+                                            <constraint firstItem="WJb-vQ-m8q" firstAttribute="leading" secondItem="EO3-5r-aO8" secondAttribute="leading" id="VTZ-kA-xGa"/>
+                                            <constraint firstAttribute="trailing" secondItem="qoo-CO-ifK" secondAttribute="trailing" id="XE0-wR-KP3"/>
+                                            <constraint firstAttribute="trailing" secondItem="TZD-hM-0fN" secondAttribute="trailing" constant="18" id="Ymq-Sw-jqd"/>
+                                            <constraint firstAttribute="trailing" secondItem="TJ6-QH-J3a" secondAttribute="trailing" id="exC-mT-JI3"/>
+                                            <constraint firstAttribute="bottom" secondItem="Vfe-jS-IiU" secondAttribute="bottom" constant="18" id="gvR-mp-8Ul"/>
+                                            <constraint firstItem="gM9-II-VFk" firstAttribute="bottom" secondItem="Vfe-jS-IiU" secondAttribute="bottom" id="jbd-5J-yL5"/>
+                                            <constraint firstItem="gM9-II-VFk" firstAttribute="top" secondItem="Vfe-jS-IiU" secondAttribute="top" id="mGi-nP-9s4"/>
+                                            <constraint firstItem="qoo-CO-ifK" firstAttribute="leading" secondItem="EO3-5r-aO8" secondAttribute="leading" id="mld-2Q-MIh"/>
+                                            <constraint firstItem="TZD-hM-0fN" firstAttribute="leading" secondItem="EO3-5r-aO8" secondAttribute="leading" constant="18" id="t7V-8Y-DEL"/>
+                                            <constraint firstItem="Vfe-jS-IiU" firstAttribute="leading" secondItem="EO3-5r-aO8" secondAttribute="leading" constant="18" id="vbe-pe-Z5f"/>
+                                            <constraint firstItem="TZD-hM-0fN" firstAttribute="top" secondItem="WJb-vQ-m8q" secondAttribute="bottom" constant="18" id="vlI-Hs-inB"/>
+                                            <constraint firstItem="TJ6-QH-J3a" firstAttribute="top" secondItem="qoo-CO-ifK" secondAttribute="bottom" constant="-1" id="yBM-di-lHH"/>
+                                            <constraint firstItem="TJ6-QH-J3a" firstAttribute="leading" secondItem="EO3-5r-aO8" secondAttribute="leading" id="zJD-ot-0Jp"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="EO3-5r-aO8" firstAttribute="top" secondItem="Ltd-HI-31p" secondAttribute="top" id="I7j-pR-2Y8"/>
+                                    <constraint firstAttribute="bottom" secondItem="EO3-5r-aO8" secondAttribute="bottom" id="SOP-NC-FlJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="EO3-5r-aO8" secondAttribute="trailing" id="a1e-OH-VLR"/>
+                                    <constraint firstItem="EO3-5r-aO8" firstAttribute="leading" secondItem="Ltd-HI-31p" secondAttribute="leading" id="obr-rB-xXL"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="Yellow"/>
+                        <constraints>
+                            <constraint firstItem="Ltd-HI-31p" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2bv-eQ-Y1g"/>
+                            <constraint firstAttribute="bottom" secondItem="md6-wa-YQM" secondAttribute="bottom" id="KpJ-93-QE1"/>
+                            <constraint firstItem="md6-wa-YQM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cNh-vz-bvR"/>
+                            <constraint firstItem="md6-wa-YQM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="cVg-17-k1Y"/>
+                            <constraint firstItem="md6-wa-YQM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dFq-NP-qHX"/>
+                            <constraint firstItem="EO3-5r-aO8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="hhG-mm-WvG"/>
+                            <constraint firstItem="md6-wa-YQM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jnW-Oe-Pi7"/>
+                            <constraint firstItem="Ltd-HI-31p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="llC-CS-OGD"/>
+                            <constraint firstItem="Ltd-HI-31p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mfK-rU-x34"/>
+                            <constraint firstAttribute="bottom" secondItem="Ltd-HI-31p" secondAttribute="bottom" id="ssY-2H-axR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblActiveCases" destination="OgX-hu-dJf" id="9ay-vo-thv"/>
+                        <outlet property="lblCriticalCases" destination="7KA-kK-oXS" id="E2y-Z1-g65"/>
+                        <outlet property="lblNewCases" destination="Nzi-xs-acY" id="yYY-kS-0be"/>
+                        <outlet property="lblNewDeaths" destination="neY-5O-FnW" id="Tg2-kQ-brz"/>
+                        <outlet property="lblRecoveredCases" destination="hdG-QS-8UO" id="TVK-Gd-eZh"/>
+                        <outlet property="lblTotalCases" destination="uLy-dp-D4f" id="3Cv-Jf-qLG"/>
+                        <outlet property="lblTotalDeaths" destination="HOs-vw-lyz" id="Dq0-6f-vl9"/>
+                        <outlet property="scrollView" destination="Ltd-HI-31p" id="U8s-qW-VlO"/>
+                        <outlet property="tblCountries" destination="Vfe-jS-IiU" id="GZf-39-iMD"/>
+                        <outlet property="viewCases" destination="TJ6-QH-J3a" id="uTc-z7-rq8"/>
+                        <outlet property="viewDeaths" destination="WJb-vQ-m8q" id="3WY-uA-iFu"/>
+                        <outlet property="viewTblShadow" destination="gM9-II-VFk" id="9b3-23-Vu1"/>
+                        <outlet property="viewTitle" destination="qoo-CO-ifK" id="i2U-Rs-rJD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.971014492753625" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Blue Gray">
+            <color red="0.56499999761581421" green="0.67799997329711914" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Dark Blue">
+            <color red="0.20000000298023224" green="0.21199999749660492" blue="0.32199999690055847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Pewter">
+            <color red="0.91399997472763062" green="0.9179999828338623" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Yellow">
+            <color red="0.98000001907348633" green="0.81599998474121094" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
