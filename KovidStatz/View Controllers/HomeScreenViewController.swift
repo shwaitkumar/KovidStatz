@@ -38,6 +38,8 @@ class HomeScreenViewController: UIViewController {
     let formatter : DateFormatter = DateFormatter()
     var currentDate = ""
     
+    let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -62,10 +64,21 @@ class HomeScreenViewController: UIViewController {
         getCovidDataForToday(country: "All") //country = All for World
         getCountriesList()
         
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        scrollView.addSubview(refreshControl)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        
+       // Code to refresh table view
+        refreshControl.endRefreshing()
+        getCovidDataForToday(country: "All")
+        
     }
     
     func setViewShadow(view : UIView) {

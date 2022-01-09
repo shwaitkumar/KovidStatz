@@ -23,6 +23,8 @@ class CountrywiseCovidDetailsViewController: UIViewController {
     var continent = ""
     var currentDate = ""
     
+    let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,11 +34,23 @@ class CountrywiseCovidDetailsViewController: UIViewController {
         
         getCovidDataForToday(country: country)
         
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tblCountryData.addSubview(refreshControl)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.tintColor = UIColor(named: "Dark Blue")
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        
+       // Code to refresh table view
+        getCovidDataForToday(country: country)
+        
+        refreshControl.endRefreshing()
+        tblCountryData.reloadData()
     }
     
     //MARK: getCovidDataForToday HIT
