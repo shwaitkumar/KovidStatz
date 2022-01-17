@@ -36,14 +36,14 @@ class NetworkManeger: NSObject {
         {
             authHeaders = [
                 "x-rapidapi-host": "covid-193.p.rapidapi.com",
-                "x-rapidapi-key": "b1697b9d5dmsheedecc034fcc872p1b19dajsna543bed12b02",
+                "x-rapidapi-key": "",
             ]
         }
         else
         {
             authHeaders = [
                 "x-rapidapi-host": "covid-193.p.rapidapi.com",
-                "x-rapidapi-key": "b1697b9d5dmsheedecc034fcc872p1b19dajsna543bed12b02",
+                "x-rapidapi-key": "",
             ]
         }
         
@@ -97,14 +97,14 @@ class NetworkManeger: NSObject {
         {
             authHeaders = [
                 "x-rapidapi-host": "covid-193.p.rapidapi.com",
-                "x-rapidapi-key": "b1697b9d5dmsheedecc034fcc872p1b19dajsna543bed12b02",
+                "x-rapidapi-key": "",
             ]
         }
         else
         {
             authHeaders = [
                 "x-rapidapi-host": "covid-193.p.rapidapi.com",
-                "x-rapidapi-key": "b1697b9d5dmsheedecc034fcc872p1b19dajsna543bed12b02",
+                "x-rapidapi-key": "",
             ]
         }
         
@@ -149,14 +149,14 @@ class NetworkManeger: NSObject {
         {
             authHeaders = [
                 "x-rapidapi-host": "covid-193.p.rapidapi.com",
-                "x-rapidapi-key": "b1697b9d5dmsheedecc034fcc872p1b19dajsna543bed12b02",
+                "x-rapidapi-key": "",
             ]
         }
         else
         {
             authHeaders = [
                 "x-rapidapi-host": "covid-193.p.rapidapi.com",
-                "x-rapidapi-key": "b1697b9d5dmsheedecc034fcc872p1b19dajsna543bed12b02",
+                "x-rapidapi-key": "",
             ]
         }
         

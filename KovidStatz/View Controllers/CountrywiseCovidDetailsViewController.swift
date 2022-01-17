@@ -22,7 +22,7 @@ class CountrywiseCovidDetailsViewController: UIViewController {
     var population = ""
     var continent = ""
     var currentDate = ""
-    
+
     let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
