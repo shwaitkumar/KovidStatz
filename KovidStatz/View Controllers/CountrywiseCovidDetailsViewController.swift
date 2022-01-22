@@ -22,6 +22,8 @@ class CountrywiseCovidDetailsViewController: UIViewController {
     var population = ""
     var continent = ""
     var currentDate = ""
+    
+    let formatter : DateFormatter = DateFormatter()
 
     let refreshControl = UIRefreshControl()
     
@@ -63,16 +65,27 @@ class CountrywiseCovidDetailsViewController: UIViewController {
                 debugPrint("response - ",response)
                 debugPrint("data - ",data)
                 
-                self.responseData = response["response"] //All data
-                self.responseData0Index = self.responseData[0] //data at 0 index
-                //Cases Data
-                self.casesData = self.responseData0Index["cases"] //cases data json at 0th index
-                //Death Data
-                self.deathData = self.responseData0Index["deaths"] //death data json at 0th index
-                self.testsData = self.responseData0Index["tests"] //tests data json at 0th index
-                self.population = self.responseData0Index["population"].stringValue
-                self.continent = self.responseData0Index["continent"].stringValue
-                self.tblCountryData.reloadData()
+                if response["response"] != [] {
+                    
+                    self.responseData = response["response"] //All data
+                    self.responseData0Index = self.responseData[0] //data at 0 index
+                    //Cases Data
+                    self.casesData = self.responseData0Index["cases"] //cases data json at 0th index
+                    //Death Data
+                    self.deathData = self.responseData0Index["deaths"] //death data json at 0th index
+                    self.testsData = self.responseData0Index["tests"] //tests data json at 0th index
+                    self.population = self.responseData0Index["population"].stringValue
+                    self.continent = self.responseData0Index["continent"].stringValue
+                    self.tblCountryData.reloadData()
+                    
+                }
+                else {
+                    
+                    self.formatter.dateFormat = "yyyy-MM-dd"
+                    self.currentDate = self.formatter.string(from: NSDate.distantPast.dayBefore as Date)
+                    self.getCovidDataForToday(country: "All")
+                    
+                }
                 
             }
         }else{

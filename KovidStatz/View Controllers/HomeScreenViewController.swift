@@ -210,7 +210,6 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountriesTableViewCell", for: indexPath) as! CountriesTableViewCell
         
         let data = countriesData[indexPath.row]
-        
         cell.lblCountryName.text = data.stringValue
         
         return cell
@@ -270,3 +269,4 @@ extension Date {
         return dayAfter.month != month
     }
 }
+
